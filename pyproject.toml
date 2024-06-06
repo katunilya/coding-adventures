@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "coding-adventures"
+version = "0.1.0"
+description = ""
+authors = ["Katun Ilya <katun.ilya@gmail.com>"]
+readme = "README.md"
+packages = [{ include = 'adventure' }]
+
+[tool.poetry.scripts]
+adventure = 'adventure.cli.app:app'
+
+[tool.poetry.dependencies]
+python = "^3.12"
+tibia = "^1.2.0"
+numpy = "^1.26.4"
+loguru = "^0.7.2"
+typer = { extras = ["all"], version = "^0.12.3" }
+rich = { extras = ["all"], version = "^13.7.1" }
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
