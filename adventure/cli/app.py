@@ -31,6 +31,7 @@ def wave_function_collapse_sudoku(
         ),
     ] = None,
     overtime: Annotated[bool, typer.Option()] = True,
+    step_by_step: Annotated[bool, typer.Option()] = False,
     frame_time: Annotated[float, typer.Option()] = 0.5,
     seed: Annotated[Optional[int], typer.Option()] = None,
 ):
@@ -39,14 +40,22 @@ def wave_function_collapse_sudoku(
 
     _grid = get_empty_sudoku_grid() if path is None else get_sudoku_grid_from_file(path)
 
-    if not overtime:
-        sudoku_grid_to_rich_table(solve(_grid))
+    if overtime:
+        with Live(sudoku_grid_to_rich_table(_grid)) as _live:
+            for _next_grid in iter_solution(_grid):
+                _live.update(sudoku_grid_to_rich_table(_next_grid))
+                time.sleep(frame_time)
+
         return
 
-    with Live(sudoku_grid_to_rich_table(_grid)) as _live:
-        for _next_grid in iter_solution(_grid):
-            _live.update(sudoku_grid_to_rich_table(_next_grid))
-            time.sleep(frame_time)
+    if step_by_step:
+        with Live(sudoku_grid_to_rich_table(_grid)) as _live:
+            for _next_grid in iter_solution(_grid):
+                input()
+                _live.update(sudoku_grid_to_rich_table(_next_grid))
+
+        return
+    sudoku_grid_to_rich_table(solve(_grid))
 
 
 @app.command(name="ping")

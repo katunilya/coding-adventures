@@ -18,3 +18,7 @@ module, in some cases it provides some interaction via CLI `adventure`.
 
   > Sometimes fails due to random choices that lead to cases with impossible
   > solutions
+
+  Example:
+
+  ![WFC Sudoku Example](./imgs/wfc-sudoku.gif)
