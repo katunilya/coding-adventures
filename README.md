@@ -30,42 +30,31 @@ module, in some cases it provides some interaction via CLI `adventure`.
 
   Provides 3 distance functions:
 
-  <!-- markdownlint-disable MD033 -->
+  - Euler
 
-  <details>
-  <summary><b>Euler</b></summary>
+    Default distance function, widely known by everyone.
 
-  Default distance function, widely known by everyone.
+    $$
+    \sqrt{(x_1 - x_2) ^ 2 + (y_1 - y_2) ^ 2}
+    $$
 
-  $$
-  \sqrt{(x_1 - x_2) ^ 2 + (y_1 - y_2) ^ 2}
-  $$
+  - Manhattan
 
-  </details>
+    Also known as "taxicab" distance, calculated as length of vertical and
+    horizontal moves from one position to another.
 
-  <details>
-  <summary><b>Manhattan</b></summary>
+    $$
+    |x_1 - x_2| + |y_1 - y_2|
+    $$
 
-  Also known as "taxicab" distance, calculated as length of vertical and
-  horizontal moves from one position to another.
+  - Chebyshev
 
-  $$
-  |x_1 - x_2| + |y_1 - y_2|
-  $$
+    Distance function calculated as max difference between $x$ and $y$ of
+    positions.
 
-  </details>
-
-  <details>
-  <summary><b>Chebyshev</b></summary>
-
-  Distance function calculated as max difference between $x$ and $y$ of
-  positions.
-
-  $$
-  \max (|x_1 - x_2|, |y_1 - y_2|)
-  $$
-
-  </details>
+    $$
+    \max (|x_1 - x_2|, |y_1 - y_2|)
+    $$
 
   For generating random centers of groups I also provide 3 different approaches:
 
