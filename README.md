@@ -21,7 +21,7 @@ module, in some cases it provides some interaction via CLI `adventure`.
 
   Example:
 
-  ![WFC Sudoku Example](/imgs/wfc-sudoku.gif)
+  ![WFC Sudoku Example](https://raw.githubusercontent.com/katunilya/coding-adventures/main/imgs/wfc-sudoku.gif)
 
 - [Voronoi](/adventure/voronoi.py)
 
@@ -75,4 +75,4 @@ module, in some cases it provides some interaction via CLI `adventure`.
   | Min Distance Random | Generates random $x$ & $y$ for each group center; Guarantees generation of exact number of groups and minimal distance between group center |
   | Fuzzy Grid          | Builds a grid of evenly distributed center and than based on fuzz radius randomly moves them around initial position                        |
 
-  ![Voronoi Diagrams](/imgs/voronoi.png)
+  ![Voronoi Diagrams](https://raw.githubusercontent.com/katunilya/coding-adventures/main/imgs/voronoi.png)
