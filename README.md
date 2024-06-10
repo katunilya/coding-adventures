@@ -22,3 +22,57 @@ module, in some cases it provides some interaction via CLI `adventure`.
   Example:
 
   ![WFC Sudoku Example](./imgs/wfc-sudoku.gif)
+
+- [Voronoi](/adventure/voronoi.py)
+
+  Very simple and not optimal in terms of complexity ($O$-notation) implementation of algorithm
+  for generating Voronoi Diagrams.
+
+  Provides 3 distance functions:
+
+  <!-- markdownlint-disable MD033 -->
+
+  <details>
+  <summary><b>Euler</b></summary>
+
+  Default distance function, widely known by everyone.
+
+  $$
+  \sqrt{(x_1 - x_2) ^ 2 + (y_1 - y_2) ^ 2}
+  $$
+
+  </details>
+
+  <details>
+  <summary><b>Manhattan</b></summary>
+
+  Also known as "taxicab" distance, calculated as length of vertical and
+  horizontal moves from one position to another.
+
+  $$
+  |x_1 - x_2| + |y_1 - y_2|
+  $$
+
+  </details>
+
+  <details>
+  <summary><b>Chebyshev</b></summary>
+
+  Distance function calculated as max difference between $x$ and $y$ of
+  positions.
+
+  $$
+  \max (|x_1 - x_2|, |y_1 - y_2|)
+  $$
+
+  </details>
+
+  For generating random centers of groups I also provide 3 different approaches:
+
+  | Approach            | Description                                                                                                                                 |
+  | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+  | Random              | Generates random $x$ & $y$ for each group center; Guarantees generation of exact number of groups                                           |
+  | Min Distance Random | Generates random $x$ & $y$ for each group center; Guarantees generation of exact number of groups and minimal distance between group center |
+  | Fuzzy Grid          | Builds a grid of evenly distributed center and than based on fuzz radius randomly moves them around initial position                        |
+
+  ![Voronoi Diagrams](./imgs/voronoi.png)
