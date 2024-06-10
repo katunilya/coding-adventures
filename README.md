@@ -1,5 +1,10 @@
 # Coding Adventures
 
+- [Coding Adventures](#coding-adventures)
+  - [Adventures](#adventures)
+    - [Wave Function Collapse Sudoku Solution](#wave-function-collapse-sudoku-solution)
+    - [Voronoi](#voronoi)
+
 Repository with some simple code tasks solved. Each adventure is a single python
 module, in some cases it provides some interaction via CLI `adventure`.
 
