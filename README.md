@@ -5,63 +5,63 @@ module, in some cases it provides some interaction via CLI `adventure`.
 
 ## Adventures
 
-- [Wave Function Collapse Sudoku Solution](/adventure/wfc_sudoku.py)
+### [Wave Function Collapse Sudoku Solution](/adventure/wfc_sudoku.py)
 
-  Simple implementation of Wave Function Collapse algorithm for solving sudoku
-  puzzle. Can be used via CLI with:
+Simple implementation of Wave Function Collapse algorithm for solving sudoku
+puzzle. Can be used via CLI with:
 
-  ```sh
-  adventure wfc-sudoku
-  ```
+```sh
+adventure wfc-sudoku
+```
 
-  Can output individual steps of solution.
+Can output individual steps of solution.
 
-  > Sometimes fails due to random choices that lead to cases with impossible
-  > solutions
+> Sometimes fails due to random choices that lead to cases with impossible
+> solutions
 
-  Example:
+Example:
 
-  ![WFC Sudoku Example](https://raw.githubusercontent.com/katunilya/coding-adventures/main/imgs/wfc-sudoku.gif)
+![WFC Sudoku Example](https://raw.githubusercontent.com/katunilya/coding-adventures/main/imgs/wfc-sudoku.gif)
 
-- [Voronoi](/adventure/voronoi.py)
+### [Voronoi](/adventure/voronoi.py)
 
-  Very simple and not optimal in terms of complexity ($O$-notation) implementation of algorithm
-  for generating Voronoi Diagrams.
+Very simple and not optimal in terms of complexity ($O$-notation) implementation of algorithm
+for generating Voronoi Diagrams.
 
-  Provides 3 distance functions:
+Provides 3 distance functions:
 
-  - Euler
+- Euler
 
-    Default distance function, widely known by everyone.
+  Default distance function, widely known by everyone.
 
-    $$
-    \sqrt{(x_1 - x_2) ^ 2 + (y_1 - y_2) ^ 2}
-    $$
+$$
+\sqrt{(x_1 - x_2) ^ 2 + (y_1 - y_2) ^ 2}
+$$
 
-  - Manhattan
+- Manhattan
 
-    Also known as "taxicab" distance, calculated as length of vertical and
-    horizontal moves from one position to another.
+  Also known as "taxicab" distance, calculated as length of vertical and
+  horizontal moves from one position to another.
 
-    $$
-    |x_1 - x_2| + |y_1 - y_2|
-    $$
+$$
+|x_1 - x_2| + |y_1 - y_2|
+$$
 
-  - Chebyshev
+- Chebyshev
 
-    Distance function calculated as max difference between $x$ and $y$ of
-    positions.
+  Distance function calculated as max difference between $x$ and $y$ of
+  positions.
 
-    $$
-    \max (|x_1 - x_2|, |y_1 - y_2|)
-    $$
+$$
+\max (|x_1 - x_2|, |y_1 - y_2|)
+$$
 
-  For generating random centers of groups I also provide 3 different approaches:
+For generating random centers of groups I also provide 3 different approaches:
 
-  | Approach            | Description                                                                                                                                 |
-  | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-  | Random              | Generates random $x$ & $y$ for each group center; Guarantees generation of exact number of groups                                           |
-  | Min Distance Random | Generates random $x$ & $y$ for each group center; Guarantees generation of exact number of groups and minimal distance between group center |
-  | Fuzzy Grid          | Builds a grid of evenly distributed center and than based on fuzz radius randomly moves them around initial position                        |
+| Approach            | Description                                                                                                                                 |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Random              | Generates random $x$ & $y$ for each group center; Guarantees generation of exact number of groups                                           |
+| Min Distance Random | Generates random $x$ & $y$ for each group center; Guarantees generation of exact number of groups and minimal distance between group center |
+| Fuzzy Grid          | Builds a grid of evenly distributed center and than based on fuzz radius randomly moves them around initial position                        |
 
-  ![Voronoi Diagrams](https://raw.githubusercontent.com/katunilya/coding-adventures/main/imgs/voronoi.png)
+![Voronoi Diagrams](https://raw.githubusercontent.com/katunilya/coding-adventures/main/imgs/voronoi.png)
